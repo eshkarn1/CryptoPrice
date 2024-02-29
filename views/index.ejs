@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crypto Prices</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-800 text-white font-sans">
+    <div class="container mx-auto px-4 py-8">
+        <h1 class="text-3xl font-bold mb-4">Get Crypto Prices</h1>
+        <p class="mb-2">Please Enter a Crypto Currency Pair Name to get its price for 24hr.</p>
+        <p class="mb-4">For Example: BTC-USD</p>
+        <div class="bg-gray-700 p-4 rounded-lg">
+            <p class="mb-2">Coin Name: <span class="font-semibold"><%=content%></span></p>
+            <p>Price: <span class="font-semibold"><%=price%></span></p>
+        </div>
+        <form method="post" action="/get-bitcoin" class="mt-8">
+            <div class="flex flex-col sm:flex-row items-center gap-4">
+                <label for="crypto-input" class="block text-sm font-medium">Coin Pair:</label>
+<input list="crypto-pairs" id="crypto-input" name="id" class="flex-1 mt-1 px-3 py-2 bg-gray-700 border shadow-sm border-gray-600 text-white focus:outline-none focus:border-blue-500 focus:ring-blue-500 rounded-md" placeholder="Type to search...">
+<datalist id="crypto-pairs">
+</datalist>
+<input type="submit" value="Submit" class="px-6 py-2 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 cursor-pointer">
+</div>
+        </form>
+    </div>
+</body>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const cryptoPairs = [
+            // Insert all cryptocurrency pairs here as strings
+            "TFUEL-USDC", "XLM-EUR", "ALGO-BTC", "EFI-USDT", "XTZ-USDT",
+            "XLM-BTC", "USDC-GBP", "OGN-USDT", "CLOUT-USD", "STX-USDC",
+            "CEUR-USDT", "EOS-USD", "PAX-USD", "BCH-USD", "DAI-EUR",
+            "USDT-GBP", "CRV-USDT", "LINK-USDT", "CHZ-USD", "APE-USD",
+            "STX-USD", "MATIC-USDT", "WDGLD-USD", "ETH-USD", "SNX-USD",
+            "LEND-USD", "XLM-PAX", "XRP-EUR", "XLM-USD", "BAT-USDC",
+            "LINK-USDC", "DGLD-BTC", "BCH-EUR", "BCH-BTC", "CLOUT-BTC",
+            "BTC-USD", "BCH-ETH", "ETH-TRY", "WLUNA-USD", "THETA-USD",
+            "GALA-USD", "CUSD-USDT", "BTC-TRY", "ALGO-USD", "ETH-EUR",
+            "DOGE-USD", "GRT-USD", "STX-USDT", "XRP-USD", "XLM-ETH",
+            "USD-GBP", "YFI-USD", "BTC-PAX", "UMA-USDC", "WBTC-USDC",
+            "MKR-USDT", "NEAR-USD", "CRV-USDC", "TRX-USD", "UNI-USDT",
+            "DOT-EUR", "BAT-USDT", "BCH-PAX", "DAI-USDC", "UNI-USD",
+            "TFUEL-USDT", "SOL-USDT", "ETH-BTC", "WDGLD-BTC", "CELO-USDT"
+
+            // You can add more pairs as needed
+        ];
+    
+        const inputField = document.getElementById('crypto-input');
+        const dataList = document.getElementById('crypto-pairs');
+    
+        inputField.addEventListener('input', function() {
+            const searchVal = inputField.value.toUpperCase();
+            dataList.innerHTML = ''; // Clear existing options
+            
+            cryptoPairs.filter(pair => pair.includes(searchVal))
+                .forEach(pair => {
+                    const option = document.createElement('option');
+                    option.value = pair;
+                    dataList.appendChild(option);
+                });
+        });
+    });
+    </script>
+    
+</html>

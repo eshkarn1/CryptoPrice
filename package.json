@@ -1,0 +1,19 @@
+{
+  "name": "api-capstone-project",
+  "version": "1.0.0",
+  "description": "This project will use BlockChain API to get prices of crypto coins",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Eshkarn Singh",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.6.7",
+    "body-parser": "^1.20.2",
+    "dotenv": "^16.4.5",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2"
+  }
+}
