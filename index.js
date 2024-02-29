@@ -11,7 +11,7 @@ const config = {
     headers: {accept: "application/json", Authorization: `Bearer ${process.env.API_KEY}`},
 };
 const app = express();
-
+app.set("views", "views");
 const port = process.env.PORT || 3000;
 
 app.use(express.urlencoded({ extended: true }));
