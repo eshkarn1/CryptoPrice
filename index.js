@@ -18,8 +18,8 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static("public"));
 
-app.get("/views/index.ejs", (req,res)=>{
-    res.render("index.ejs", {content: "Waiting for Coin Name..", price: "Waiting for Coin Name..."})
+app.get("/", (req,res)=>{
+    res.render("index.html", {content: "Waiting for Coin Name..", price: "Waiting for Coin Name..."})
     
 })
 
