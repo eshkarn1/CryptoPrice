@@ -19,7 +19,7 @@ app.use(express.json());
 app.use(express.static("public"));
 
 app.get("/", (req,res)=>{
-    res.render("index.html", {content: "Waiting for Coin Name..", price: "Waiting for Coin Name..."})
+    res.render("index.ejs", {content: "Waiting for Coin Name..", price: "Waiting for Coin Name..."})
     
 })
 
