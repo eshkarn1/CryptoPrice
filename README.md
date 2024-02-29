@@ -1,6 +1,7 @@
 # CryptoPrice
 
-CryptoPrice is a project aimed at providing users with real-time cryptocurrency price information. Utilizing various APIs, this application offers up-to-date prices, historical data, and market trends for a wide range of cryptocurrencies.
+CryptoPrice is a project aimed at providing users with real-time cryptocurrency price information. 
+Utilizing Swagger UI from Blockchain API
 
 ## Features
 
